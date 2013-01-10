@@ -7,7 +7,7 @@ conn = Bunny.new
 conn.start
 
 ch = conn.channel
-x = conn.direct('hello-exchange', :durable => true)
+x = ch.direct('hello-exchange', :durable => true)
 q = ch.queue('hello-queue')
 q.bind(x, :routing_key => 'hola')
 
