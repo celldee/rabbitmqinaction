@@ -8,3 +8,5 @@ x = ch.direct('hello-exchange', :durable => true)
 
 msg = ARGV[0]
 x.publish(msg, :routing_key => 'hola')
+
+conn.close
